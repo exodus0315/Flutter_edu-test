@@ -1,16 +1,11 @@
 # new_project
 
-A new Flutter project.
+플러터를 활용한 첫번째 프로젝트입니다.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+이제 막 자바스크립트 기초 프로젝트만 몇 개 해본 정도라... 혼동될수도 있겠지만
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+웹 뿐만 아니라 앱을 활용하는 것에도 관심을 가지다가 플러터에 대해 흥미가 생겨서 시작해보려고 합니다.
