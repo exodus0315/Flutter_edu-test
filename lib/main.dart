@@ -1,51 +1,69 @@
 import 'package:flutter/material.dart';
-import 'onboarding.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+class MyApp extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: onBoardingPage(),
-    );
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return MyAppState();
   }
 }
 
-class MyPage extends StatelessWidget {
-  const MyPage({Key? key}) : super(key: key);
+class MyAppState extends State<MyApp> {
+  int counter = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Main page'),
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Main Screen',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
+      home: Scaffold(
+        appBar: AppBar(),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('You have pushed the button this many times:'),
+              Text(
+                '$counter',
+                style: Theme.of(context).textTheme.displayLarge,
               ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                      builder: (context) => const onBoardingPage()),
-                );
-              },
-              child: const Text('Go to onboarding screen'),
-            ),
-          ],
+              Checkbox(
+                value: false,
+                onChanged: (bool) {
+                  null;
+                },
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FloatingActionButton(
+                    child: Icon(Icons.add),
+                    onPressed: () {
+                      setState(() {
+                        counter++;
+                        print('$counter');
+                      });
+                    },
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  FloatingActionButton(
+                    child: Icon(Icons.delete),
+                    onPressed: () {
+                      setState(() {
+                        counter--;
+                        print('$counter');
+                      });
+                    },
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
