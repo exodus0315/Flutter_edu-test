@@ -1,65 +1,20 @@
 import 'package:flutter/material.dart';
+import 'ABitSpicy/login_app/login.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return MyAppState();
-  }
+void main() {
+  runApp(MyApp());
 }
 
-class MyAppState extends State<MyApp> {
-  int counter = 0;
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text('You have pushed the button this many times:'),
-              Text(
-                '$counter',
-                style: Theme.of(context).textTheme.displayLarge,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FloatingActionButton(
-                    child: Icon(Icons.add),
-                    onPressed: () {
-                      setState(() {
-                        counter++;
-                        print('$counter');
-                      });
-                    },
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  FloatingActionButton(
-                    child: Icon(Icons.remove),
-                    onPressed: () {
-                      setState(() {
-                        counter--;
-                        print('$counter');
-                      });
-                    },
-                  ),
-                ],
-              )
-            ],
-          ),
-        ),
-      ),
+      title: 'Firebase login app',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.grey),
+      home: LogIn(),
     );
   }
 }
